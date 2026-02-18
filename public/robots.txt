@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://penguingrowth.com.br/sitemap.xml
