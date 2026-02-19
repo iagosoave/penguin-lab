@@ -6,6 +6,10 @@ import Services from './components/Services'
 import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
 
+function RainbowDivider() {
+  return <div className="w-full h-[2px] gradient-rainbow-flow" />
+}
+
 function App() {
   return (
     <>
@@ -18,9 +22,13 @@ function App() {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <RainbowDivider />
         <SitesShowcase />
+        <RainbowDivider />
         <Automations />
+        <RainbowDivider />
         <Services />
+        <RainbowDivider />
         <CallToAction />
       </main>
       <Footer />

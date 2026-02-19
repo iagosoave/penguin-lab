@@ -20,26 +20,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Decorative animated rainbow lines */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.2, delay: 1.6 }} style={{ transformOrigin: 'left' }}
-          className="absolute top-[17%] left-[6%] w-24 h-[1.5px] gradient-rainbow-flow rounded-full opacity-40" />
-        <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.2, delay: 1.9 }} style={{ transformOrigin: 'left' }}
-          className="absolute top-[21%] left-[8%] w-14 h-[1px] gradient-rainbow-flow rounded-full opacity-25" style={{ animationDelay: '1.5s' }} />
-
-        <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.2, delay: 1.7 }} style={{ transformOrigin: 'right' }}
-          className="absolute top-[28%] right-[5%] w-32 h-[1.5px] gradient-rainbow-flow rounded-full opacity-35" style={{ animationDelay: '0.8s' }} />
-        <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.2, delay: 2.0 }} style={{ transformOrigin: 'right' }}
-          className="absolute top-[33%] right-[9%] w-20 h-[1px] gradient-rainbow-flow rounded-full opacity-20" style={{ animationDelay: '2s' }} />
-
-        <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.2, delay: 2.1 }} style={{ transformOrigin: 'left' }}
-          className="absolute bottom-[22%] left-[4%] w-28 h-[1.5px] gradient-rainbow-flow rounded-full opacity-30" style={{ animationDelay: '1s' }} />
-        <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.2, delay: 1.8 }} style={{ transformOrigin: 'right' }}
-          className="absolute bottom-[28%] right-[6%] w-36 h-[1.5px] gradient-rainbow-flow rounded-full opacity-35" style={{ animationDelay: '2.5s' }} />
-        <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ duration: 1.2, delay: 2.2 }} style={{ transformOrigin: 'right' }}
-          className="absolute bottom-[33%] right-[10%] w-16 h-[1px] gradient-rainbow-flow rounded-full opacity-20" style={{ animationDelay: '3s' }} />
-      </div>
-
       <div className="max-w-2xl mx-auto w-full relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 36 }}
@@ -47,8 +27,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-penguin-black"
         >
-          Estratégia, performance e{' '}
-          <span className="gradient-rainbow-text">inteligência artificial</span>
+          Estratégia, performance
+          <br />
+          <span className="gradient-rainbow-text">e inteligência artificial</span>
         </motion.h1>
 
         <motion.div
