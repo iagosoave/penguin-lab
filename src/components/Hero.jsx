@@ -26,8 +26,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-[2rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold leading-[1.05] tracking-tight text-penguin-black"
         >
-          Marketing digital que{' '}
-          <span className="gradient-rainbow-text">gera resultado</span>
+          Fazemos empresas crescerem com estratégia, performance e{' '}
+          <span className="gradient-rainbow-text">inteligência artificial</span>
         </motion.h1>
 
         <motion.div
