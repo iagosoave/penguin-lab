@@ -24,12 +24,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#" className="group">
+        <a href="#" className="group flex items-center gap-2.5">
           <img
             src="/images/logo.png"
             alt="Penguin Growth"
-            className="h-12 md:h-14 transition-transform duration-300 group-hover:scale-[1.03]"
+            className="h-9 md:h-10 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
           />
+          <span className="font-display text-sm font-semibold tracking-[0.15em] uppercase text-penguin-black">
+            Penguin Growth
+          </span>
         </a>
 
         <a

@@ -20,19 +20,6 @@ export default function Hero() {
       </div>
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
-        {/* Logo + nome */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex items-center gap-2.5 mb-7"
-        >
-          <img src="/images/logo.png" alt="Penguin Growth" className="h-8 w-auto" />
-          <span className="font-display text-sm font-semibold tracking-[0.2em] uppercase text-penguin-muted">
-            Penguin Growth
-          </span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
