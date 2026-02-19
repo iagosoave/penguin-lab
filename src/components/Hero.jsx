@@ -24,7 +24,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[2rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold leading-[1.05] tracking-tight text-penguin-black"
+          className="font-display text-[1.55rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-penguin-black"
         >
           Fazemos empresas crescerem com estratégia, performance e{' '}
           <span className="gradient-rainbow-text">inteligência artificial</span>
