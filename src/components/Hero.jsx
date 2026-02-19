@@ -20,18 +20,16 @@ export default function Hero() {
       </div>
 
       <div className="max-w-4xl mx-auto w-full relative z-10">
-        {/* Small pill badge */}
+        {/* Logo + nome */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-7"
+          className="flex items-center gap-2.5 mb-7"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-penguin-black/10 bg-white/60 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full gradient-rainbow block shrink-0" />
-            <span className="font-display text-xs font-semibold tracking-[0.2em] uppercase text-penguin-muted">
-              Agência de Marketing Digital
-            </span>
+          <img src="/images/logo.png" alt="Penguin Growth" className="h-8 w-auto" />
+          <span className="font-display text-sm font-semibold tracking-[0.2em] uppercase text-penguin-muted">
+            Penguin Growth
           </span>
         </motion.div>
 
