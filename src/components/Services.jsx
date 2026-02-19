@@ -40,7 +40,11 @@ export default function Services() {
               className="py-10 sm:py-14 first:pt-0 last:pb-0 group cursor-default"
             >
               <div className="grid grid-cols-1 sm:grid-cols-[min-content_1fr] gap-4 sm:gap-6 items-start transition-transform duration-500 group-hover:translate-x-2">
-                <span className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold gradient-rainbow-text leading-none whitespace-nowrap">
+                {/* backgroundSize fixed so gradient shows all colors even on short 2-char strings */}
+                <span
+                  className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold gradient-rainbow-text leading-none whitespace-nowrap"
+                  style={{ backgroundSize: '400px 100%' }}
+                >
                   {service.number}
                 </span>
 

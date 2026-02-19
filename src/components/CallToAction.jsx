@@ -44,7 +44,7 @@ export default function CallToAction() {
           className="mt-10"
         >
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5515997155627"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-rainbow-glow inline-flex items-center gap-3 gradient-rainbow text-white font-display text-lg font-semibold px-10 py-4 rounded-full hover:gap-4 transition-all duration-300"

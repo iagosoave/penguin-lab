@@ -22,7 +22,8 @@ export default function SitesShowcase() {
   const allSites = [...sites, ...sites]
 
   return (
-    <section className="py-16 md:py-28 overflow-hidden" id="sites">
+    /* overflow-x: clip clips horizontal overflow without clipping vertical (float animation) */
+    <section className="py-16 md:py-28" style={{ overflowX: 'clip' }} id="sites">
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,26 +32,27 @@ export default function SitesShowcase() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="font-display text-sm font-semibold tracking-[0.25em] uppercase text-penguin-muted mb-4">
-            Criacao de Sites
+            Criação de Sites
           </p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-penguin-black">
             Sites que convertem
           </h2>
-          <p className="font-body text-lg text-penguin-muted mt-4 max-w-lg leading-relaxed">
+          <p className="font-body text-base sm:text-lg text-penguin-muted mt-4 max-w-lg leading-relaxed">
             Design moderno, performance e foco total em resultado.
             Cada pixel pensado para transformar visitantes em clientes.
           </p>
         </motion.div>
       </div>
 
-      <div className="relative marquee-mask">
-        <div className="flex animate-marquee w-max gap-8 px-4">
+      {/* Marquee wrapper: py-6 gives vertical breathing room for the float animation */}
+      <div className="relative marquee-mask py-6">
+        <div className="flex animate-marquee w-max gap-6 sm:gap-8 px-4">
           {allSites.map((src, i) => {
             const style = floatStyles[i % 6]
             return (
               <div
                 key={i}
-                className="shrink-0 w-72 md:w-[380px]"
+                className="shrink-0 w-56 sm:w-72 md:w-[380px]"
                 style={{
                   animation: `float-gentle ${style.duration} ease-in-out ${style.delay} infinite`,
                 }}

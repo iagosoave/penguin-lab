@@ -22,7 +22,7 @@ export default function MobileCTA() {
         >
           <div className="px-4 py-3 bg-white/90 backdrop-blur-md border-t border-penguin-black/[0.04]">
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5515997155627"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gradient-rainbow text-white font-display text-sm font-semibold py-3 rounded-full w-full min-h-[44px]"

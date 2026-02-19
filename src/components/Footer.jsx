@@ -1,7 +1,7 @@
 import { Instagram } from 'lucide-react'
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' }
+  { icon: Instagram, href: 'https://www.instagram.com/penguingrowth', label: 'Instagram @penguingrowth' }
 ]
 
 export default function Footer() {
@@ -19,6 +19,8 @@ export default function Footer() {
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={social.label}
               className="text-white/30 hover:text-white/70 hover:scale-110 transition-all duration-300"
             >
