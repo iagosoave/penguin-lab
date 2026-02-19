@@ -23,21 +23,21 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#" className="group flex items-center gap-2.5">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" className="group flex items-center gap-2">
           <img
             src="/images/logo.png"
             alt="Penguin Growth"
-            className="h-9 md:h-10 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
+            className="h-6 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
           />
-          <span className="font-display text-sm font-semibold tracking-[0.15em] uppercase text-penguin-black">
+          <span className="font-display text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-penguin-black">
             Penguin Growth
           </span>
         </a>
 
         <a
           href="#contato"
-          className="font-display text-xs font-semibold tracking-[0.15em] uppercase text-penguin-black/60 hover:text-penguin-black transition-colors duration-300"
+          className="font-display text-[0.65rem] font-semibold tracking-[0.15em] uppercase text-penguin-black/60 hover:text-penguin-black transition-colors duration-300"
         >
           Contato
         </a>
