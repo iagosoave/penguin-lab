@@ -7,12 +7,7 @@ import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
 
 function RainbowDivider() {
-  return (
-    <div
-      className="w-full gradient-rainbow-flow"
-      style={{ height: '3px', willChange: 'background-position' }}
-    />
-  )
+  return <div className="w-full h-[2px] gradient-rainbow" />
 }
 
 function App() {
