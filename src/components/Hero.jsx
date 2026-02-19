@@ -27,8 +27,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-penguin-black"
         >
-          Estratégia, performance
-          <br />
+          <span className="block">Estratégia, performance</span>
           <span className="gradient-rainbow-text">e inteligência artificial</span>
         </motion.h1>
 

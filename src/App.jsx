@@ -7,7 +7,17 @@ import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
 
 function RainbowDivider() {
-  return <div className="w-full h-[2px] gradient-rainbow-flow" />
+  return (
+    <div className="relative w-full" style={{ height: '3px', overflow: 'visible', zIndex: 10 }}>
+      {/* Glow difuso atrás */}
+      <div
+        className="absolute inset-x-0 gradient-rainbow-flow"
+        style={{ height: '3px', filter: 'blur(6px)', opacity: 0.75, transform: 'scaleY(6)', transformOrigin: 'center' }}
+      />
+      {/* Linha nítida na frente */}
+      <div className="relative w-full gradient-rainbow-flow" style={{ height: '3px' }} />
+    </div>
+  )
 }
 
 function App() {
