@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { ArrowRight } from 'lucide-react'
 
 const sites = [
   '/images/site-1.png',
@@ -18,17 +20,19 @@ const floatStyles = [
   { duration: '3.1s', delay: '0.7s' },
 ]
 
-export default function SitesShowcase() {
+export default function SitesShowcase({ onViewAll }) {
   const allSites = [...sites, ...sites]
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
     /* overflow-x: clip clips horizontal overflow without clipping vertical (float animation) */
     <section className="py-16 md:py-28" style={{ overflowX: 'clip' }} id="sites">
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <motion.div
+          ref={ref}
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="font-display text-sm font-semibold tracking-[0.25em] uppercase text-penguin-muted mb-4">
@@ -41,6 +45,14 @@ export default function SitesShowcase() {
             Design moderno, performance e foco total em resultado.
             Cada pixel pensado para transformar visitantes em clientes.
           </p>
+
+          <button
+            onClick={onViewAll}
+            className="mt-8 inline-flex items-center gap-2 font-display text-xs font-semibold tracking-[0.15em] uppercase bg-penguin-black text-white rounded-full px-6 py-3 hover:opacity-80 transition-opacity duration-300 group"
+          >
+            Ver todos os projetos
+            <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
         </motion.div>
       </div>
 
