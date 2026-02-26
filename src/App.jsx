@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import SitesShowcase from './components/SitesShowcase'
+import SitesPortfolio from './components/SitesPortfolio'
 import Automations from './components/Automations'
-import Services from './components/Services'
 import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
 
@@ -11,6 +12,28 @@ function RainbowDivider() {
 }
 
 function App() {
+  const [showPortfolio, setShowPortfolio] = useState(false)
+
+  const handleViewAll = () => {
+    setShowPortfolio(true)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleBack = () => {
+    setShowPortfolio(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  if (showPortfolio) {
+    return (
+      <>
+        <Navbar />
+        <SitesPortfolio onBack={handleBack} />
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
       <a
@@ -23,11 +46,9 @@ function App() {
       <main id="main-content">
         <Hero />
         <RainbowDivider />
-        <SitesShowcase />
+        <SitesShowcase onViewAll={handleViewAll} />
         <RainbowDivider />
         <Automations />
-        <RainbowDivider />
-        <Services />
         <RainbowDivider />
         <CallToAction />
       </main>

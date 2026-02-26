@@ -6,10 +6,7 @@ export default function CallToAction() {
     <section className="py-20 md:py-32 relative overflow-hidden" id="contato">
       <div className="absolute inset-0 bg-penguin-black" />
 
-      {/* Animated rainbow line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] gradient-rainbow-flow" />
-
-      {/* Atmospheric glow */}
+{/* Atmospheric glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] gradient-rainbow blur-[180px] opacity-[0.07]" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
