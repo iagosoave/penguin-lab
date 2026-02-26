@@ -160,16 +160,6 @@ function VideoProject({ inView }) {
               captação de clientes premium.
             </p>
           </div>
-          <div className="flex flex-wrap gap-1.5 sm:justify-end sm:max-w-[180px]">
-            {['React', 'Tailwind', 'Framer Motion'].map((t) => (
-              <span
-                key={t}
-                className="px-2.5 py-1 font-display text-[9px] tracking-wider uppercase bg-white/5 border border-white/10 text-white/35"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </motion.div>
@@ -213,10 +203,6 @@ function ProjectCard({ project, index, inView }) {
           className="w-full h-auto block"
           animate={{ scale: hovered ? 1.03 : 1 }}
           transition={{ duration: 0.55 }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to top, #f5f5f5 0%, transparent 55%)' }}
         />
 
         <AnimatePresence>
@@ -273,21 +259,6 @@ function ProjectCard({ project, index, inView }) {
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-1.5 mt-3">
-          {project.tags.map((t) => (
-            <span
-              key={t}
-              className="px-2 py-0.5 font-display text-[8px] tracking-wider uppercase"
-              style={{
-                background: `${project.accent}10`,
-                border: `1px solid ${project.accent}28`,
-                color: `${project.accent}90`,
-              }}
-            >
-              {t}
-            </span>
-          ))}
-        </div>
       </div>
     </motion.div>
   )
