@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import SitesShowcase from './components/SitesShowcase'
 import SitesPortfolio from './components/SitesPortfolio'
@@ -42,7 +42,7 @@ function App() {
       >
         Pular para o conteúdo principal
       </a>
-      <Navbar />
+      {/* <Navbar /> */}
       <main id="main-content">
         <Hero />
         <RainbowDivider />

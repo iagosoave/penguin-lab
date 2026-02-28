@@ -58,7 +58,6 @@ function ChatPhone({ active }) {
     return () => T.forEach(clearTimeout)
   }, [active, resetKey])
 
-  // Scroll APENAS o container do chat, nunca a página
   useEffect(() => {
     if (chatRef.current) {
       chatRef.current.scrollTop = chatRef.current.scrollHeight
@@ -67,11 +66,9 @@ function ChatPhone({ active }) {
 
   return (
     <div className="relative w-[255px] h-[530px] bg-[#111] rounded-[2.8rem] p-[10px] shadow-[0_30px_70px_-15px_rgba(0,0,0,0.25),0_0_0_1px_rgba(255,255,255,0.07)_inset]">
-      {/* Dynamic island */}
       <div className="absolute top-[14px] left-1/2 -translate-x-1/2 w-[76px] h-[20px] bg-black rounded-full z-20" />
 
       <div className="w-full h-full bg-[#ece5dd] rounded-[2.2rem] overflow-hidden flex flex-col">
-        {/* WhatsApp header */}
         <div className="bg-[#075e54] px-3.5 pt-9 pb-3 flex items-center gap-2.5 shrink-0">
           <div className="w-8 h-8 rounded-full bg-[#128C7E] flex items-center justify-center text-white text-[10px] font-bold font-display shrink-0">
             PG
@@ -87,7 +84,6 @@ function ChatPhone({ active }) {
           </div>
         </div>
 
-        {/* Messages — scroll interno, nunca afeta a página */}
         <div
           ref={chatRef}
           className="flex-1 overflow-y-auto px-2.5 py-3 flex flex-col gap-1.5"
@@ -118,7 +114,6 @@ function ChatPhone({ active }) {
           {typing && <TypingDots />}
         </div>
 
-        {/* Input bar */}
         <div className="shrink-0 bg-[#f0f0f0] px-2.5 py-2 flex items-center gap-2">
           <div className="flex-1 bg-white rounded-full px-3 py-1.5 text-[10px] text-gray-400 font-body">
             Mensagem
@@ -131,7 +126,6 @@ function ChatPhone({ active }) {
         </div>
       </div>
 
-      {/* Venda convertida — posicionado dentro do phone, no topo, sem sair do flow */}
       <AnimatePresence>
         {done && (
           <motion.div
@@ -184,35 +178,50 @@ export default function Automations() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ——— LEFT ——— */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <p className="font-display text-sm font-semibold tracking-[0.25em] uppercase text-penguin-muted mb-4">
-              Agentes de IA
-            </p>
+          <div>
+            <div className="overflow-hidden">
+              <motion.p
+                initial={{ y: '100%' }}
+                animate={inView ? { y: 0 } : {}}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display text-sm font-semibold tracking-[0.25em] uppercase text-penguin-muted mb-4"
+              >
+                Agentes de IA
+              </motion.p>
+            </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-penguin-black">
-              Vendas no{' '}
-              <span className="gradient-rainbow-text">automático</span>
-            </h2>
+            <div className="overflow-hidden">
+              <motion.h2
+                initial={{ y: '100%' }}
+                animate={inView ? { y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-penguin-black"
+              >
+                Vendas no{' '}
+                <span className="gradient-rainbow-text">automático</span>
+              </motion.h2>
+            </div>
 
-            <p className="font-body text-base sm:text-lg text-penguin-muted mt-6 leading-relaxed max-w-md">
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="font-body text-base sm:text-lg text-penguin-muted mt-6 leading-relaxed max-w-md"
+            >
               Pare de deixar dinheiro na mesa. Contrate{' '}
               <strong className="text-penguin-black font-bold">agentes de IA</strong> que atendem no
               WhatsApp, Instagram e Facebook para triplicar sua capacidade de vendas. Eles trabalham
               24h por dia transformando curiosos em compradores pagantes.
-            </p>
+            </motion.p>
 
             {/* Benefits */}
             <div className="mt-8 md:mt-10 flex flex-col gap-5 sm:gap-6">
               {benefits.map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.12 }}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={inView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.35 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-penguin-black flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
@@ -229,15 +238,15 @@ export default function Automations() {
                 </motion.div>
               ))}
             </div>
-
-          </motion.div>
+          </div>
 
           {/* ——— RIGHT: Phone ——— */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 60, rotateY: -8 }}
+            animate={inView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="flex justify-center"
+            style={{ perspective: 800 }}
           >
             <ChatPhone active={inView} />
           </motion.div>

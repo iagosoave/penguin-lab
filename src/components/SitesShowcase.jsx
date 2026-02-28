@@ -26,26 +26,43 @@ export default function SitesShowcase({ onViewAll }) {
   const inView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    /* overflow-x: clip clips horizontal overflow without clipping vertical (float animation) */
     <section className="py-16 md:py-28" style={{ overflowX: 'clip' }} id="sites">
-      <div className="max-w-7xl mx-auto px-6 mb-16">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p className="font-display text-sm font-semibold tracking-[0.25em] uppercase text-penguin-muted mb-4">
+      <div className="max-w-7xl mx-auto px-6 mb-16" ref={ref}>
+        <div className="overflow-hidden">
+          <motion.p
+            initial={{ y: '100%' }}
+            animate={inView ? { y: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-sm font-semibold tracking-[0.25em] uppercase text-penguin-muted mb-4"
+          >
             Criação de Sites
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-penguin-black">
+          </motion.p>
+        </div>
+        <div className="overflow-hidden">
+          <motion.h2
+            initial={{ y: '100%' }}
+            animate={inView ? { y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-penguin-black"
+          >
             Sites que convertem
-          </h2>
-          <p className="font-body text-base sm:text-lg text-penguin-muted mt-4 max-w-lg leading-relaxed">
-            Design moderno, performance e foco total em resultado.
-            Cada pixel pensado para transformar visitantes em clientes.
-          </p>
+          </motion.h2>
+        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="font-body text-base sm:text-lg text-penguin-muted mt-4 max-w-lg leading-relaxed"
+        >
+          Design moderno, performance e foco total em resultado.
+          Cada pixel pensado para transformar visitantes em clientes.
+        </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <button
             onClick={onViewAll}
             className="mt-8 inline-flex items-center gap-2 font-display text-xs font-semibold tracking-[0.15em] uppercase bg-penguin-black text-white rounded-full px-6 py-3 hover:opacity-80 transition-opacity duration-300 group"
@@ -56,8 +73,13 @@ export default function SitesShowcase({ onViewAll }) {
         </motion.div>
       </div>
 
-      {/* Marquee wrapper: py-6 gives vertical breathing room for the float animation */}
-      <div className="relative marquee-mask py-6">
+      {/* Marquee */}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="relative marquee-mask py-6"
+      >
         <div className="flex animate-marquee w-max gap-6 sm:gap-8 px-4">
           {allSites.map((src, i) => {
             const style = floatStyles[i % 6]
@@ -79,7 +101,7 @@ export default function SitesShowcase({ onViewAll }) {
             )
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
