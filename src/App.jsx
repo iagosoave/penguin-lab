@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import SitesShowcase from './components/SitesShowcase'
 import SitesPortfolio from './components/SitesPortfolio'
@@ -24,16 +23,17 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  // Tela de Portfólio (Quando clica em "Ver todos os projetos")
   if (showPortfolio) {
     return (
       <>
-        <Navbar />
         <SitesPortfolio onBack={handleBack} />
         <Footer />
       </>
     )
   }
 
+  // Tela Principal (Home)
   return (
     <>
       <a
@@ -42,7 +42,7 @@ function App() {
       >
         Pular para o conteúdo principal
       </a>
-      {/* <Navbar /> */}
+      
       <main id="main-content">
         <Hero />
         <RainbowDivider />
@@ -52,6 +52,7 @@ function App() {
         <RainbowDivider />
         <CallToAction />
       </main>
+      
       <Footer />
     </>
   )
